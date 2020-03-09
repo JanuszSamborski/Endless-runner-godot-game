@@ -1,0 +1,41 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Area",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://Enemy.gd"
+} ]
+_global_script_class_icons={
+"Enemy": ""
+}
+
+[application]
+
+config/name="To infinity and beyond"
+run/main_scene="res://Level.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+GameVariable="*res://GameVariable.gd"
+
+[debug]
+
+settings/stdout/print_fps=true
+
+[gdnative]
+
+singletons=[  ]
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
