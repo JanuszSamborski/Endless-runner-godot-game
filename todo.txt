@@ -1,0 +1,12 @@
+todo:
+- finish todo list :D
+- look into hitbox detection - now accomplished with get_overlapping_areas(), there is area_entered signal that should but does not work, problaly because translations instead of physics is beeing used
+- clean up signals
+- modify powerups - they are now just removed with queue_free(), instead their hitbox should be disabled and some kind of animation or smth played
+- add sound
+- add clicky menu
+- add scoreboard
+- modify visuals - change objects with their corresponding hitboxes, particle effects etc
+
+possibly:
+- add more types of powerups
