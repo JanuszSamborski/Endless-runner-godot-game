@@ -1,9 +1,11 @@
 extends Node
 
+const OBSTICLES = "Obsticles"
+const POWERUP = "Powerup"
+
 var player_area : float = 40
 var player_movement_speed : float = 0.5
 var player_default_position : Vector3 = Vector3(0, 2, 0)
-signal player_died
 var player_score : float = 0
 var player_max_score : float = 0
 

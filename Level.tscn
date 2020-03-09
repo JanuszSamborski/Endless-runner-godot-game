@@ -37,6 +37,8 @@ script = ExtResource( 2 )
 
 [node name="Obsticles" type="Node" parent="Spawner"]
 
+[node name="Powerup" type="Node" parent="Spawner"]
+
 [node name="Label" type="Label" parent="."]
 margin_right = 885.0
 margin_bottom = 506.0

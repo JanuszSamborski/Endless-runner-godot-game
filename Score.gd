@@ -4,8 +4,12 @@ var pass_time : float = 0
 var score : int = 0
 var max_score : int = 0
 
+var player_node : Node
+
 func _ready():
-	connect("player_died", self, "player_reset")
+	player_node = get_node("/root/Level/Player")
+	if player_node.connect("player_died", self, "player_reset") != OK:
+		print("player_died signal connect failed in Score node")
 
 func player_reset():
 	update_max_score()
@@ -25,8 +29,8 @@ func update_max_score():
 		max_score = score
 	pass	
 
-func add_points(points):
-	score+=points
+func add_points():
+	score+=10
 	pass
 
 func _process(delta):

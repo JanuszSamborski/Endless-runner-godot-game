@@ -10,12 +10,12 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Area",
-"class": "Enemy",
+"class": "SpawnedObject",
 "language": "GDScript",
 "path": "res://Enemy.gd"
 } ]
 _global_script_class_icons={
-"Enemy": ""
+"SpawnedObject": ""
 }
 
 [application]

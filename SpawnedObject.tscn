@@ -2,5 +2,5 @@
 
 [ext_resource path="res://Enemy.gd" type="Script" id=1]
 
-[node name="Enemy" type="Area"]
+[node name="SpawnedObject" type="Area"]
 script = ExtResource( 1 )

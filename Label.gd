@@ -5,6 +5,6 @@ func _ready():
 	score_node = get_node('../Score')
 	pass
 
-func _process(delta):
+func _process(_delta):
 	set_text("Score: " + str(score_node.get_score()) + "\nMax score: " + str(score_node.get_max_score()))
 	pass

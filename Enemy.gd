@@ -1,5 +1,5 @@
 extends Area
-class_name Enemy
+class_name SpawnedObject
 
 
 var variable_node : Node

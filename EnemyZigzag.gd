@@ -1,4 +1,4 @@
-extends Enemy
+extends SpawnedObject
 
 var time : float
 
