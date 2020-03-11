@@ -32,9 +32,11 @@ func _process(_delta):
 	if get_overlapping_areas().size()>0: # should be replaced with area_entered - signal not working
 		for area in get_overlapping_areas():
 			if area.get_parent().get_name() == variable_node.OBSTICLES:
+				$AudioDead.play()
 				emit_signal("player_died")
 			elif area.get_parent().get_name() == variable_node.POWERUP:
 				area.queue_free()
+				$AudioCoin.play()
 				emit_signal("powerup_collected")
 		
 	pass
