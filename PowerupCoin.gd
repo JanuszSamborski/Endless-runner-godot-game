@@ -1,11 +1,16 @@
 extends SpawnedObject
 
+var direction : float
+
 func _ready():
-	for i in range(0,432):
-		var mat = load("res://coin_material_test.tres")
-		$MeshInstance.set_surface_material(i, mat)
-	pass
+	randomize()
+	var rand = rand_range(-180,180)
+	direction = sign(rand)
+	if direction == 0:
+		direction = 1
+	$MeshInstance.rotate_y(rand)
 
 func _process(delta):
+	$MeshInstance.rotate_y(delta*2*direction)
 	translate(Vector3.BACK*delta*variable_node.enemy_basic_speed)
 	pass

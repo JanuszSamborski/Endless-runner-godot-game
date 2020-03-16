@@ -7,6 +7,7 @@ todo:
 - add clicky menu
 - add scoreboard
 - modify visuals - change objects with their corresponding hitboxes, particle effects etc
+- change EnemyZigzag model and/or this enemy types behaviour
 
 possibly:
 - add more types of powerups
