@@ -1,4 +1,6 @@
 todo:
+- FIX DEATH SCREEN - CAN'T RESTART LEVEL RIGHT NOW - signal button_down not triggering?
+
 - finish todo list :D
 - look into hitbox detection - now accomplished with get_overlapping_areas(), there is area_entered signal that should but does not work, problaly because translations instead of physics is beeing used
 - clean up signals

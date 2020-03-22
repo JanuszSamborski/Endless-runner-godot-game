@@ -14,7 +14,7 @@ func _ready():
 	node_obsticles = get_node("Obsticles")
 	node_powerup = get_node("Powerup")
 	player_node = get_node("/root/Level/Player")
-	if player_node.connect("player_died", self, "reset")!= OK:
+	if player_node.connect("player_reset", self, "reset")!= OK:
 		print("player_died signal connect failed in Spawner node")
 	spawn()
 	pass
