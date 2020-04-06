@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/coin.obj-511ddc92a0cef069b22c0bb17d4ef290.mesh"
+
+[deps]
+
+files=[ "res://.import/coin.obj-511ddc92a0cef069b22c0bb17d4ef290.mesh" ]
+
+source_file="res://Resources/coin.obj"
+dest_files=[ "res://.import/coin.obj-511ddc92a0cef069b22c0bb17d4ef290.mesh", "res://.import/coin.obj-511ddc92a0cef069b22c0bb17d4ef290.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
