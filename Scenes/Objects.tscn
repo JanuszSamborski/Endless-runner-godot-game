@@ -11,10 +11,13 @@ script = ExtResource( 1 )
 wait_time = 0.4
 autostart = true
 
-[node name="TimerCoin" type="Timer" parent="."]
-wait_time = 0.8
-autostart = true
+[node name="TimerOther" type="Timer" parent="."]
+one_shot = true
 
 [node name="CoinContainer" type="Node" parent="."]
+
+[node name="HeartContainer" type="Node" parent="."]
+
+[node name="ShieldContainer" type="Node" parent="."]
 [connection signal="timeout" from="TimerEnemy" to="." method="_on_TimerEnemy_timeout"]
-[connection signal="timeout" from="TimerCoin" to="." method="_on_TimerCoin_timeout"]
+[connection signal="timeout" from="TimerOther" to="." method="_on_TimerOther_timeout"]

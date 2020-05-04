@@ -6,6 +6,7 @@ var control_node : Node
 
 func _ready():
 	control_node = get_node("/root/Main/Control")
+	control_node.get_node("HeartDisplay").update_display()
 	emit_signal("reset")
 	pass
 
@@ -27,9 +28,17 @@ func _on_Button_button_up():
 	control_node.get_node("./LabelGameScore").set_visible(true)
 	control_node.get_node("./LabelGameScore").set_text("Score: " + str(score) +
 	"\nTop score: " + str(top_score))
+	control_node.get_node("HeartDisplay").update_display()
+	GameVariable.OBJECT_SPEED = GameVariable.START_OBJECT_SPEED
 
 func _on_Player_hit():
+	control_node.get_node("HeartDisplay").update_display()
 	$AudioHit.play()
+
+
+func _on_Player_dead():
+	$AudioHit.play()
+	control_node.get_node("HeartDisplay").update_display()
 	control_node.get_node("./LabelGameScore").set_visible(false)
 	control_node.get_node("PopupDeath").set_visible(true)
 	if score > top_score:
@@ -38,3 +47,20 @@ func _on_Player_hit():
 	"\nTop score: " + str(top_score))
 	score = 0
 	get_tree().paused = true
+	pass
+
+
+func _on_Player_heart():
+	control_node.get_node("HeartDisplay").update_display()
+	$AudioCoin.play()
+	pass
+
+
+func _on_Player_shield():
+	$AudioCoin.play()
+	pass
+
+
+func _on_TimerSpeedIncrease_timeout():
+	GameVariable.OBJECT_SPEED+=GameVariable.OBJECT_SPEED_INCREASE
+	pass
