@@ -1,0 +1,10 @@
+todo:
+
+- finish todo list :D
+- modify powerups - they are now just removed with queue_free(), instead their hitbox should be disabled and some kind of animation or smth played
+- add clicky menu
+- add scoreboard
+- modify visuals - change objects with their corresponding hitboxes, particle effects etc
+
+possibly:
+- add more types of powerups

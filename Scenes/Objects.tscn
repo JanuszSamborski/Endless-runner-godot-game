@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Objects.gd" type="Script" id=1]
+
+[node name="Objects" type="Node"]
+script = ExtResource( 1 )
+
+[node name="EnemyContainer" type="Node" parent="."]
+
+[node name="TimerEnemy" type="Timer" parent="."]
+wait_time = 0.4
+autostart = true
+
+[node name="TimerOther" type="Timer" parent="."]
+one_shot = true
+
+[node name="CoinContainer" type="Node" parent="."]
+
+[node name="HeartContainer" type="Node" parent="."]
+
+[node name="ShieldContainer" type="Node" parent="."]
+[connection signal="timeout" from="TimerEnemy" to="." method="_on_TimerEnemy_timeout"]
+[connection signal="timeout" from="TimerOther" to="." method="_on_TimerOther_timeout"]
