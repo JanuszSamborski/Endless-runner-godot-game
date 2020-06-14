@@ -15,6 +15,12 @@ func _on_Player_coin():
 	score+=GameVariable.COIN_POINTS
 	control_node.get_node("./LabelGameScore").set_text("Score: " + str(score) +
 	"\nTop score: " + str(top_score))
+	
+func _on_Player_diamond():
+	$AudioDiamond.play()
+	score+=50
+	control_node.get_node("./LabelGameScore").set_text("Score: " + str(score) +
+	"\nTop score: " + str(top_score))
 
 func _on_TimerPoints_timeout():
 	score+=1
@@ -45,6 +51,8 @@ func _on_Player_dead():
 		top_score = score
 	control_node.get_node("./PopupDeath/LabelScore").set_text("Score: " + str(score) +
 	"\nTop score: " + str(top_score))
+	var date = Ranking.set_date()
+	Ranking.write_to_file(str(top_score)+" "+str(date))
 	score = 0
 	get_tree().paused = true
 	pass
@@ -59,8 +67,8 @@ func _on_Player_heart():
 func _on_Player_shield():
 	$AudioCoin.play()
 	pass
-
-
+	
 func _on_TimerSpeedIncrease_timeout():
 	GameVariable.OBJECT_SPEED+=GameVariable.OBJECT_SPEED_INCREASE
 	pass
+

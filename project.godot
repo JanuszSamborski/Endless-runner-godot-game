@@ -22,6 +22,8 @@ config/icon="res://icon.png"
 [autoload]
 
 GameVariable="*res://Scripts/GameVariable.gd"
+Ranking="*res://Scripts/Ranking.gd"
+Score="*res://Scripts/Score.gd"
 
 [input]
 

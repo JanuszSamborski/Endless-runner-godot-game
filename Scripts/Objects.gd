@@ -4,6 +4,7 @@ var enemy_basic : Resource
 var coin : Resource
 var heart : Resource
 var shield : Resource
+var redDiamond: Resource
 var rng : RandomNumberGenerator
 var inst : Node
 
@@ -14,6 +15,7 @@ func _ready():
 	coin = load("res://Scenes/Coin.tscn")
 	heart = load("res://Scenes/Heart.tscn")
 	shield = load("res://Scenes/Shield.tscn")
+	redDiamond = load("res://Scenes/Diamond.tscn")
 	pass
 
 func _spawn_enemy():
@@ -41,6 +43,9 @@ func _spawn_random():
 					$HeartContainer.add_child(inst)
 			else:
 				_spawn_random()
+		GameVariable.DIAMOND:
+			inst = redDiamond.instance()
+			$DiamondContainer.add_child(inst)
 		GameVariable.SHIELD:
 			inst = shield.instance()
 			$ShieldContainer.add_child(inst)
@@ -54,6 +59,8 @@ func _on_TimerEnemy_timeout():
 
 func _on_Game_reset():
 	for child in $CoinContainer.get_children():
+		child.queue_free()
+	for child in $DiamondContainer.get_children():
 		child.queue_free()
 	for child in $EnemyContainer.get_children():
 		child.queue_free()

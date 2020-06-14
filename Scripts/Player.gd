@@ -4,6 +4,7 @@ signal coin
 signal dead
 signal heart
 signal shield
+signal diamond
 
 func _ready():
 	GameVariable.PLAYER_LIVES = GameVariable.PLAYER_LIVES_MAX
@@ -38,6 +39,9 @@ func _on_Player_area_entered(area):
 		GameVariable.OBJECT_COIN:
 			area.collect()
 			emit_signal("coin")
+		GameVariable.OBJECT_DIAMOND:
+			area.collect()
+			emit_signal("diamond")
 		GameVariable.OBJECT_HEART:
 			if GameVariable.PLAYER_LIVES<GameVariable.PLAYER_LIVES_MAX:
 				GameVariable.PLAYER_LIVES+=1

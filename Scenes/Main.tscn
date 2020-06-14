@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Objects.tscn" type="PackedScene" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://Resources/coins-1.wav" type="AudioStream" id=7]
 [ext_resource path="res://Resources/fail-3.wav" type="AudioStream" id=8]
 [ext_resource path="res://Scripts/HeartDisplay.gd" type="Script" id=9]
+[ext_resource path="res://Resources/diamond.wav" type="AudioStream" id=10]
+[ext_resource path="res://Scripts/Button2.gd" type="Script" id=11]
 
 [sub_resource type="PanoramaSky" id=1]
 panorama = ExtResource( 5 )
@@ -61,10 +63,15 @@ stream = ExtResource( 8 )
 wait_time = 2.0
 autostart = true
 
+[node name="AudioDiamond" type="AudioStreamPlayer" parent="Game"]
+stream = ExtResource( 10 )
+
 [node name="Control" type="Control" parent="."]
 pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 4.20471
+margin_right = 4.20471
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -108,11 +115,32 @@ anchor_left = 0.5
 anchor_top = 0.75
 anchor_right = 0.5
 anchor_bottom = 0.75
-margin_left = -40.0
-margin_right = 40.0
+margin_left = -151.0
+margin_top = 3.05176e-05
+margin_right = -60.0
+margin_bottom = 47.0
 custom_fonts/font = ExtResource( 6 )
 text = "Retry"
 flat = true
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="Control/PopupDeath"]
+anchor_left = 0.5
+anchor_top = 0.75
+anchor_right = 0.5
+anchor_bottom = 0.75
+margin_left = 49.0
+margin_top = 3.05176e-05
+margin_right = 140.0
+margin_bottom = 47.0
+custom_fonts/font = ExtResource( 6 )
+text = "Rank"
+flat = true
+align = 0
+script = ExtResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -153,3 +181,4 @@ environment = SubResource( 2 )
 [connection signal="timeout" from="Game/TimerPoints" to="Game" method="_on_TimerPoints_timeout"]
 [connection signal="timeout" from="Game/TimerSpeedIncrease" to="Game" method="_on_TimerSpeedIncrease_timeout"]
 [connection signal="button_up" from="Control/PopupDeath/Button" to="Game" method="_on_Button_button_up"]
+[connection signal="pressed" from="Control/PopupDeath/Button2" to="Control/PopupDeath/Button2" method="_on_Button2_pressed"]

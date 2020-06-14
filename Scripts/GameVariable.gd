@@ -13,8 +13,9 @@ var SPAWN_ARRAY_ENEMY : Array
 const COIN = "coin"
 const OBJECT_NOTHING = "nothing"
 const HEART = "heart"
+const DIAMOND = "diamond"
 const SHIELD = "shield"
-const SPAWN_PROBABILITY_OTHER : Dictionary = {COIN: 7, HEART: 2, SHIELD: 1, OBJECT_NOTHING : 3}
+const SPAWN_PROBABILITY_OTHER : Dictionary = {COIN: 7, HEART: 2, SHIELD: 1, DIAMOND: 2, OBJECT_NOTHING : 3}
 var SPAWN_ARRAY_OTHER : Array
 const SPAWN_Z : float = -200.0
 const SPAWN_X_MAX : float = 10.0
@@ -26,9 +27,12 @@ const ENEMY_ZIGZAG_AMP : float = 24.0
 const DESPAWN_Z : float = 10.0
 const OBJECT_ENEMY = "EnemyContainer"
 const OBJECT_COIN = "CoinContainer"
+const OBJECT_DIAMOND = "DiamondContainer"
 const COIN_PROBABILITY : int = 5
+const DIAMOND_ROTATION : float = 4.0
 const COIN_ROTATION : float = 5.0
 const COIN_POINTS : int = 10
+const DIAMOND_POINTS: int = 20
 const OBJECT_HEART = "HeartContainer"
 const OBJECT_SHIELD = "ShieldContainer"
 const HEART_ROTATION : float = 6.0

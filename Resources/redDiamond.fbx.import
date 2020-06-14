@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/diamond.fbx-3a581f66d8a0951c84aab41ebb4ba123.scn"
+path="res://.import/redDiamond.fbx-826a9663aa10cfb984ba2e8dc5d69c45.scn"
 
 [deps]
 
-source_file="res://Resources/diamond.fbx"
-dest_files=[ "res://.import/diamond.fbx-3a581f66d8a0951c84aab41ebb4ba123.scn" ]
+source_file="res://Resources/redDiamond.fbx"
+dest_files=[ "res://.import/redDiamond.fbx-826a9663aa10cfb984ba2e8dc5d69c45.scn" ]
 
 [params]
 
