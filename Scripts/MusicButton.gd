@@ -5,7 +5,6 @@ var sound: Texture
 var muted: bool
 
 func _ready():
-	BackgroundMusic.play()
 	mute = load("res://Resources/mute.png")
 	sound = load("res://Resources/soundon.png")
 	muted = false
