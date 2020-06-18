@@ -20,7 +20,7 @@ func write_to_file(text):
 	else:
 		file_write.open("res://ranking.txt", File.READ_WRITE)
 		file_write.seek_end()
-		file_write.store_line(text)
+		file_write.store_line(text+"\r")
 		file_write.close()
 		
 func set_date():
@@ -70,12 +70,17 @@ func initialize_list_of_scores():
 
 		
 func sort_list_of_scores(scores):
-	var n = len(scores) 
+	var n = scores.size()
+	
 	for i in range(n-1): 
 		for j in range(0, n-i-1): 
 			if int(scores[j].score) > int(scores[j+1].score): 
 				var tmp = scores[j]
 				scores[j] = scores[j+1]
-				scores[j+1] = tmp
+				scores[j+1] = tmp		
+	for i in range(n):
+		if i <= n-2 && scores[i].score==scores[i+1].score:
+			scores.remove(i)
+			n = scores.size()
 	return scores
 	

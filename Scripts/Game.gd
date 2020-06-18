@@ -22,6 +22,23 @@ func _on_Player_diamond():
 	control_node.get_node("./LabelGameScore").set_text("Score: " + str(score) +
 	"\nTop score: " + str(top_score))
 
+func _on_Player_ball():
+	$AudioDiamond.play()
+	score+=100
+	control_node.get_node("./LabelGameScore").set_text("Score: " + str(score) +
+	"\nTop score: " + str(top_score))
+
+func _on_Player_asteroid():
+	$AudioHit.play()
+	if score >=100:
+		score-=100
+	else:
+		 score = 0
+			
+	control_node.get_node("./LabelGameScore").set_text("Score: " + str(score) +
+	"\nTop score: " + str(top_score))
+	
+	
 func _on_TimerPoints_timeout():
 	score+=1
 	control_node.get_node("./LabelGameScore").set_text("Score: " + str(score) +

@@ -5,6 +5,8 @@ var coin : Resource
 var heart : Resource
 var shield : Resource
 var redDiamond: Resource
+var asteroid: Resource
+var ball: Resource
 var rng : RandomNumberGenerator
 var inst : Node
 
@@ -16,6 +18,8 @@ func _ready():
 	heart = load("res://Scenes/Heart.tscn")
 	shield = load("res://Scenes/Shield.tscn")
 	redDiamond = load("res://Scenes/Diamond.tscn")
+	asteroid = load("res://Scenes/Asteroid.tscn")
+	ball = load("res://Scenes/Ball.tscn")
 	pass
 
 func _spawn_enemy():
@@ -28,6 +32,12 @@ func _spawn_enemy():
 		GameVariable.ENEMY_ZIGZAG:
 			inst = enemy_zigzag.instance()
 			$EnemyContainer.add_child(inst)
+		GameVariable.ASTEROID:
+			inst = asteroid.instance()
+			$AsteroidContainer.add_child(inst)
+		GameVariable.OBJECT_NOTHING:
+			pass
+			
 
 func _spawn_random():
 	rng.randomize()
@@ -46,6 +56,9 @@ func _spawn_random():
 		GameVariable.DIAMOND:
 			inst = redDiamond.instance()
 			$DiamondContainer.add_child(inst)
+		GameVariable.BALL:
+			inst = ball.instance()
+			$BallContainer.add_child(inst)
 		GameVariable.SHIELD:
 			inst = shield.instance()
 			$ShieldContainer.add_child(inst)
@@ -67,6 +80,10 @@ func _on_Game_reset():
 	for child in $HeartContainer.get_children():
 		child.queue_free()
 	for child in $ShieldContainer.get_children():
+		child.queue_free()
+	for child in $AsteroidContainer.get_children():
+		child.queue_free()
+	for child in $BallContainer.get_children():
 		child.queue_free()
 
 

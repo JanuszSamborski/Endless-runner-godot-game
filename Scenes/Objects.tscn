@@ -16,10 +16,14 @@ one_shot = true
 
 [node name="CoinContainer" type="Node" parent="."]
 
+[node name="DiamondContainer" type="Node" parent="."]
+
 [node name="HeartContainer" type="Node" parent="."]
+
+[node name="AsteroidContainer" type="Node" parent="."]
 
 [node name="ShieldContainer" type="Node" parent="."]
 
-[node name="DiamondContainer" type="Node" parent="."]
+[node name="BallContainer" type="Node" parent="."]
 [connection signal="timeout" from="TimerEnemy" to="." method="_on_TimerEnemy_timeout"]
 [connection signal="timeout" from="TimerOther" to="." method="_on_TimerOther_timeout"]

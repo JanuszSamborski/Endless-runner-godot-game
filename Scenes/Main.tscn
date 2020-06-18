@@ -171,10 +171,13 @@ __meta__ = {
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 2 )
-[connection signal="reset" from="Game" to="Game/Player" method="_on_Game_reset"]
 [connection signal="reset" from="Game" to="Game/Objects" method="_on_Game_reset"]
+[connection signal="reset" from="Game" to="Game/Player" method="_on_Game_reset"]
+[connection signal="asteroid" from="Game/Player" to="Game" method="_on_Player_asteroid"]
+[connection signal="ball" from="Game/Player" to="Game" method="_on_Player_ball"]
 [connection signal="coin" from="Game/Player" to="Game" method="_on_Player_coin"]
 [connection signal="dead" from="Game/Player" to="Game" method="_on_Player_dead"]
+[connection signal="diamond" from="Game/Player" to="Game" method="_on_Player_diamond"]
 [connection signal="heart" from="Game/Player" to="Game" method="_on_Player_heart"]
 [connection signal="hit" from="Game/Player" to="Game" method="_on_Player_hit"]
 [connection signal="shield" from="Game/Player" to="Game" method="_on_Player_shield"]

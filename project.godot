@@ -24,6 +24,7 @@ config/icon="res://icon.png"
 GameVariable="*res://Scripts/GameVariable.gd"
 Ranking="*res://Scripts/Ranking.gd"
 Score="*res://Scripts/Score.gd"
+BackgroundMusic="*res://Scenes/BackgroundMusic.tscn"
 
 [input]
 

@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Resources/Asteroid.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://Scripts/Asteroid.gd" type="Script" id=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.419608, 0.376471, 0.376471, 1 )
+
+[sub_resource type="SphereShape" id=2]
+radius = 3.21569
+
+[node name="Asteroid" type="Area"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
+collision_layer = 4
+collision_mask = 2
+script = ExtResource( 2 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0.196871, -0.152183, 0.202287 )
+mesh = ExtResource( 1 )
+material/0 = SubResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0.432281, 0, -0.386336 )
+shape = SubResource( 2 )

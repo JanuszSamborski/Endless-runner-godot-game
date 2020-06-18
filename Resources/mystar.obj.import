@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/mystar.obj-a2a3c2dda974abb04321ea9f505eeb60.mesh"
+
+[deps]
+
+files=[ "res://.import/mystar.obj-a2a3c2dda974abb04321ea9f505eeb60.mesh" ]
+
+source_file="res://Resources/mystar.obj"
+dest_files=[ "res://.import/mystar.obj-a2a3c2dda974abb04321ea9f505eeb60.mesh", "res://.import/mystar.obj-a2a3c2dda974abb04321ea9f505eeb60.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

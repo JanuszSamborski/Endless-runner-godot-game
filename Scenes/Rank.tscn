@@ -4,7 +4,7 @@
 [ext_resource path="res://Resources/zorque.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Resources/font.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Scripts/Label2.gd" type="Script" id=4]
-[ext_resource path="res://Scripts/Rank.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/BackButton.gd" type="Script" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 45
@@ -17,7 +17,6 @@ outline_size = 1
 font_data = ExtResource( 2 )
 
 [node name="Rank" type="Node2D"]
-script = ExtResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 528.403, 335.744 )
@@ -41,10 +40,10 @@ __meta__ = {
 }
 
 [node name="Label2" type="Label" parent="."]
-margin_left = 323.873
-margin_top = 110.53
-margin_right = 1067.88
-margin_bottom = 171.53
+margin_left = 344.23
+margin_top = 112.381
+margin_right = 1088.24
+margin_bottom = 173.381
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Score                  Date                    Hour"
@@ -61,6 +60,8 @@ custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.517647, 0.027451, 0.027451, 1 )
 text = "Back to menu"
 flat = true
+expand_icon = true
+script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -75,4 +76,4 @@ script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
+[connection signal="pressed" from="BackButton" to="BackButton" method="_on_BackButton_pressed"]
